@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "removeComments": false,
+    "pretty": true,
+    "strictNullChecks": true,
+    "lib": ["es2015", "es2016"],
+    "outDir": "dist",
+    "sourceRoot": "src/"
+  },
+  "exclude": ["**/__tests__/*"],
+  "compileOnSave": false,
+  "buildOnSave": false
+}

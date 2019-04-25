@@ -1,5 +1,7 @@
 # Pythagorean Cache
 
+[![Build Status](https://travis-ci.org/shaunburdick/pythagorean-cache.svg?branch=master)](https://travis-ci.org/shaunburdick/pythagorean-cache) [![Coverage Status](https://coveralls.io/repos/github/shaunburdick/pythagorean-cache/badge.svg?branch=master)](https://coveralls.io/github/shaunburdick/pythagorean-cache?branch=master)
+
 🍷A cache that dumps when full or at an interval
 
 [![cup](https://upload.wikimedia.org/wikipedia/commons/a/a9/Physagorian_Pythagoras_Greedy_Tantalus_cup_05.svg)](https://en.wikipedia.org/wiki/Pythagorean_cup)

@@ -1,6 +1,6 @@
 # Pythagorean Cache
 
-[![Build Status](https://travis-ci.org/shaunburdick/pythagorean-cache.svg?branch=master)](https://travis-ci.org/shaunburdick/pythagorean-cache) [![Coverage Status](https://coveralls.io/repos/github/shaunburdick/pythagorean-cache/badge.svg?branch=master)](https://coveralls.io/github/shaunburdick/pythagorean-cache?branch=master) [![npm version](https://badge.fury.io/js/pythagorean-cache.svg)](https://badge.fury.io/js/pythagorean-cache)
+[![npm version](https://badge.fury.io/js/pythagorean-cache.svg)](https://badge.fury.io/js/pythagorean-cache)  [![Build Status](https://github.com/shaunburdick/pythagorean-cache/actions/workflows/test.yml/badge.svg)](https://github.com/shaunburdick/pythagorean-cache/actions/workflows/test.yml)
 
 🍷A cache that dumps when full or at an interval
 

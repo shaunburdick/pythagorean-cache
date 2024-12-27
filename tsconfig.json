@@ -13,7 +13,6 @@
     "outDir": "dist",
     "sourceRoot": "src/"
   },
-  "exclude": ["**/__tests__/*"],
   "compileOnSave": false,
   "buildOnSave": false
 }

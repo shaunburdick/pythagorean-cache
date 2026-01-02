@@ -1,4 +1,4 @@
-import { EventEmitter } from 'events';
+import { EventEmitter } from 'node:events';
 
 export interface PythagoreanCacheOpts {
     /**
@@ -25,13 +25,13 @@ export interface PythagoreanCacheOpts {
  * @template T
  */
 export class PythagoreanCache<T = unknown> extends EventEmitter {
-    private queue: T[] = [];
-    private interval: NodeJS.Timeout;
+    private readonly queue: T[] = [];
+    private interval: NodeJS.Timeout | undefined;
 
-    public constructor(private opts: PythagoreanCacheOpts) {
+    public constructor(private readonly opts: PythagoreanCacheOpts) {
         super();
 
-        if (!opts.size && !opts.interval) {
+        if (typeof opts.size !== 'number' && typeof opts.interval !== 'number') {
             throw new Error('You must specify either a size or interval (or both)');
         }
 
@@ -62,7 +62,7 @@ export class PythagoreanCache<T = unknown> extends EventEmitter {
      * @returns true if limit is reached
      */
     public checkLimit(): boolean {
-        return this.opts.size ? this.length >= this.opts.size : false;
+        return typeof this.opts.size === 'number' ? this.length >= this.opts.size : false;
     }
 
     /**
@@ -70,7 +70,7 @@ export class PythagoreanCache<T = unknown> extends EventEmitter {
      */
     public dump(): void {
         if (this.length > 0) {
-            const items = this.queue.splice(0, this.opts.size || this.length);
+            const items = this.queue.splice(0, this.opts.size ?? this.length);
             this.emit('dump', items);
         }
     }
@@ -103,7 +103,7 @@ export class PythagoreanCache<T = unknown> extends EventEmitter {
     public startInterval() {
         this.stopInterval();
 
-        if (this.opts.interval) {
+        if (typeof this.opts.interval === 'number') {
             this.interval = setInterval(() => {
                 this.dump();
             }, this.opts.interval);
@@ -114,7 +114,7 @@ export class PythagoreanCache<T = unknown> extends EventEmitter {
      * Stop the interval check
      */
     public stopInterval(): void {
-        if (this.interval) {
+        if (this.interval !== undefined) {
             clearInterval(this.interval);
         }
     }

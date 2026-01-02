@@ -28,7 +28,9 @@ describe('PythagoreanCache', () => {
             done();
         });
 
-        pushItems.forEach((item) => cq.push(item));
+        for (const item of pushItems) {
+            cq.push(item);
+        }
     });
 
     it('should emit items when interval is reached', (done) => {
@@ -41,6 +43,8 @@ describe('PythagoreanCache', () => {
             done();
         });
 
-        pushItems.forEach((item) => cq.push(item));
+        for (const item of pushItems) {
+            cq.push(item);
+        }
     });
 });

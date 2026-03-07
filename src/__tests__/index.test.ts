@@ -1,4 +1,4 @@
-// eslint-disable-next-line import/no-unresolved
+// eslint-disable-next-line import/no-unresolved -- it exists
 import { PythagoreanCache } from '..';
 
 describe('PythagoreanCache', () => {
